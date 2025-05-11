@@ -24,6 +24,15 @@
     "files": [
         "dist"
     ],
+    "keywords": [
+        "toast",
+        "notification",
+        "vanilla-js",
+        "ui-component",
+        "typescript",
+        "minimal",
+        "progress-bar"
+    ],
     "scripts": {
         "build": "tsc && cp src/toast.css dist/toast.css",
         "lint": "eslint . --ext .ts",
