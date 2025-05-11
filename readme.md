@@ -5,6 +5,7 @@
 
 ![MIT License](https://img.shields.io/badge/license-MIT-green.svg)
 ![Made with TypeScript](https://img.shields.io/badge/TypeScript-checked-blue.svg)
+[![npm version](https://img.shields.io/npm/v/kongari-toast.svg)](https://www.npmjs.com/package/kongari-toast)
 
 ---
 
