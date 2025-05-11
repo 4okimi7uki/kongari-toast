@@ -29,7 +29,8 @@
                 font-size: 22px;
             }
         </style>
-        <link rel="stylesheet" href="toast.css" />
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/kongari-toast@1.0.0/dist/toast.css" />
     </head>
     <body>
         <div class="container">
@@ -40,9 +41,8 @@
             <button id="promiseBtn">promise</button>
         </div>
 
-        <script type="module" src="./dist/toast.js"></script>
         <script type="module">
-            import { Toast } from "./dist/toast.js";
+            import { Toast } from "https://cdn.jsdelivr.net/npm/kongari-toast@1.0.0/dist/toast.js";
 
             function fetchApi() {
                 return new Promise((resolve, reject) => {
