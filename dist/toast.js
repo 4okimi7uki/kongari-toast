@@ -1,11 +1,4 @@
 import { toastIconMap } from "./toastIconMap.js";
-function loadToastCSS() {
-    const link = document.createElement("link");
-    link.rel = "stylesheet";
-    link.href = "./toast.css"; // 相対パス注意！
-    document.head.appendChild(link);
-}
-loadToastCSS();
 export class Toast {
     constructor(message, type, options = {}) {
         this.message = message;

@@ -1,13 +1,5 @@
 import { toastIconMap, ToastType, ToastIcon } from "./toastIconMap.js";
 
-function loadToastCSS() {
-    const link = document.createElement("link");
-    link.rel = "stylesheet";
-    link.href = "./toast.css"; // 相対パス注意！
-    document.head.appendChild(link);
-}
-loadToastCSS();
-
 export interface ToastOptions {
     duration?: number;
     position?: string;
