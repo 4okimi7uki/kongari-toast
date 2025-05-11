@@ -1,7 +1,5 @@
-#toast-container {
+.toast-container {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
     display: flex;
     flex-direction: column;
     gap: 12px;
@@ -22,7 +20,31 @@
     transition: all 0.8s;
 }
 
-@keyframes toast-in {
+.position-tr {
+    top: 20px;
+    right: 20px;
+}
+.position-tl {
+    top: 20px;
+    left: 20px;
+}
+.position-br {
+    bottom: 20px;
+    right: 20px;
+}
+.position-bl {
+    bottom: 20px;
+    left: 20px;
+}
+
+.toast-out-r {
+    animation: toast-out-r 0.8s forwards !important;
+}
+.toast-out-l {
+    animation: toast-out-r 0.8s forwards !important;
+}
+
+@keyframes toast-in-r {
     0% {
         transform: translateX(150%);
     }
@@ -33,7 +55,7 @@
         transform: translateX(0);
     }
 }
-@keyframes toast-out {
+@keyframes toast-out-r {
     0% {
         transform: translateX(0);
     }
@@ -42,6 +64,29 @@
     }
     100% {
         transform: translateX(150%);
+    }
+}
+
+@keyframes toast-in-l {
+    0% {
+        transform: translateX(-150%);
+    }
+    80% {
+        transform: translateX(10%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+@keyframes toast-out-l {
+    0% {
+        transform: translateX(0);
+    }
+    80% {
+        transform: translateX(10%);
+    }
+    100% {
+        transform: translateX(-150%);
     }
 }
 
@@ -77,9 +122,6 @@
     }
 }
 
-:root {
-    --toastify-color-progress-light: linear-gradient(to right, #eef947, #5ac8fa, #007aff, #34aadc, #5856d6, #ff2d55);
-}
 .toast-progressbar {
     width: 100%;
     height: 8px;
