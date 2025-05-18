@@ -1,0 +1,38 @@
+name: Bug Report
+description: Report something that's not working as expected
+title: "[Bug] "
+labels: [bug]
+body:
+    - type: textarea
+      id: description
+      attributes:
+          label: Describe the bug
+          description: What happened? What's the expected behavior?
+          placeholder: A clear and concise description of the issue.
+      validations:
+          required: true
+
+    - type: textarea
+      id: steps
+      attributes:
+          label: Steps to reproduce
+          description: How can we reproduce the issue?
+          placeholder: |
+              1. Call `new Toast("test", "success")`
+              2. Observe broken icon
+      validations:
+          required: true
+
+    - type: input
+      id: version
+      attributes:
+          label: Package version
+          placeholder: e.g. 1.0.3
+      validations:
+          required: false
+
+    - type: input
+      id: environment
+      attributes:
+          label: Browser / Environment
+          placeholder: e.g. Chrome 123, iOS 17, Node 18
