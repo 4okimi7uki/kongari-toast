@@ -1,82 +1,149 @@
-# kongari-toast 🍞
-
-軽量でスタイリッシュなトースト通知ライブラリ "**こんがりトースト**"  
-進捗バー付きで自動非表示。アイコン・カラーもタイプごとに変化。Vanilla JS 対応！
+<p align="center">
+<img src="toaster.png" alt="toaster_image"/>
+</p>
 
 ![MIT License](https://img.shields.io/badge/license-MIT-green.svg)
 ![Made with TypeScript](https://img.shields.io/badge/TypeScript-checked-blue.svg)
 [![npm version](https://img.shields.io/npm/v/kongari-toast.svg)](https://www.npmjs.com/package/kongari-toast)
 
----
+# Kongari-Toast 🍞
 
-## ✅ 特徴
+**Kongari-Toast** - Lightly crisp, no extra toppings. Just clean toast notifications. Auto-fade with progress, and type-based icons and color themes.
+Built for Vanilla JS — and yes, it works perfectly with npm too.
 
--   🔥 複数タイプ：`default`, `success`, `error`, `info`, `warning`, `promise`
--   ⏳ プログレスバー付き
+## Demo
 
--   📦 `.promise()` メソッドで非同期に対応
+--- TBD ---
 
--   🧼 メッセージ非表示モード（アイコンだけ）
+## Installation
 
-## 📥 インストール方法
-
-### npm 経由で使う場合
+### npm
 
 ```bash
 npm install kongari-toast
 ```
 
 ```js
+// main.js (using bundler)
 import { Toast } from "kongari-toast";
 
-new Toast("保存しました", "success");
+new Toast("save!", "success");
 ```
 
-### ✅ CDN で直接読み込む（Vanilla JS / HTML で使用）
-
-以下のように CDN 経由で読み込めます：
+### via CDN
 
 ```html
-<!-- スタイル -->
+<!-- style -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/kongari-toast/dist/toast.css" />
 
-<!-- モジュール本体（ESM形式） -->
+<!-- ESM Module -->
 <script type="module">
     import { Toast } from "https://cdn.jsdelivr.net/npm/kongari-toast/dist/toast.js";
 
-    new Toast("保存しました！", "success");
+    new Toast("Saved successfully!", "success");
 </script>
 ```
 
----
+## Basic Usage
 
-## 📦 使用方法
+After installing Kongari-Toast via CDN or npm, you can use it like this:
+
+### Syntax
 
 ```js
-import { Toast } from "kongari-toast";
+new Toast(message, type, options?)
+```
 
-// Normal(+options)
-new Toast("comment!", (toastType = "success"), {
-    duration: 3000,
-    position: "top-right",
-    withoutMsg: true,
-});
-// FYI) position: "top-right" | "top-left" | "bottom-right" | "bottom-right"
+| Parameter | Type     | Description                                                    |
+| --------- | -------- | -------------------------------------------------------------- |
+| `message` | `string` | The text content shown in the toast                            |
+| `type`    | `string` | Toast type: `"success"`, `"error"`, `"info"`, `"warning"`      |
+| `options` | `object` | (_Optional_) Additional settings (e.g. `duration`, `position`) |
 
-// 非同期処理中のトースト
-Toast.promise(fetch("/api/something"), {
-    loading: "loading comment!",
-    success: "success comment!",
-    error: "error comment!",
+### Example
+
+```js
+new Toast("Data saved!", "success");
+new Toast("Oops, something went wrong.", "error");
+new Toast("Just so you know...", "info", { duration: 5000 });
+```
+
+### Options
+
+| Option     | Type     | Default          | Description                                                                            |
+| ---------- | -------- | ---------------- | -------------------------------------------------------------------------------------- |
+| `duration` | `number` | `3000`ms         | How long (ms) the toast stays visible                                                  |
+| `position` | `string` | `"bottom-right"` | Position on the screen: `"top-right"`, `"top-left"`, `"bottom-right"`, `"bottom-left"` |
+
+> The `options` object is likely to expand in future updates.  
+> Got a feature you'd like to see?　[Open an issue](https://github.com/4okimi7uki/kongari-toast/issues) — suggestions are always welcome!
+
+---
+
+### Full Example
+
+```js
+new Toast("Hello, Kongari-Toast!", "info", {
+    duration: 4000,
+    position: "bottom-left",
 });
 ```
 
-## 🎨 カスタマイズ
+## Promise Usage
 
--   toastIconMap.js を編集すればアイコン・色を変更可能
+Display toasts that reflect the state of a promise — `loading`, `success`, or `error`.
 
--   toast.css でアニメーションやレイアウトも自由に調整
+```js
+Toast.promise(
+    fetch("/api/save-data"), // your async task
+    {
+        loading: "Saving...",
+        success: "Saved successfully!",
+        error: "Failed to save.",
+    }
+);
+```
+
+### Syntax
+
+```js
+Toast.promise(promise, messages, options?)
+```
+
+| Parameter  | Type      | Description                                                    |
+| ---------- | --------- | -------------------------------------------------------------- |
+| `promise`  | `Promise` | The asynchronous task to track                                 |
+| `messages` | `object`  | Texts for `"loading"`, `"success"`, and `"error"`              |
+| `options`  | `object`  | (_Optional_) Additional settings (e.g. `duration`, `position`) |
+
+### Example
+
+```js
+Toast.promise(
+    new Promise((resolve) => setTimeout(resolve, 2000)),
+    {
+        loading: "loading...",
+        success: "success!!!",
+        error: "error!",
+    },
+    { position: "top-right" }
+);
+```
+
+> A spinner icon is shown while loading — no setup required！
+
+> No need to use `new Toast()` — `Toast.promise` works directly.
+
+## Customization
+
+If you're using Kongari-Toast via npm, you can freely adjust icons, colors, animations, and layout to match your design needs.
+
+### Modify Icons and Colors
+
+Edit `toastIconMap.js` to customize the icons and associated colors for each toast type.
+
+You can use emojis, SVGs, or even image paths — it's totally up to you.
 
 ---
 
-🄯 2025 Aoki Mizuki – Developed with 🍭 and a sense of fun.
+> 2025 Aoki Mizuki – Developed with 🍭 and a sense of fun.
