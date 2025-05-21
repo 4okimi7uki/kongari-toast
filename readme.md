@@ -14,7 +14,7 @@ Built for Vanilla JS — and yes, it works perfectly with npm too.
 > 📌 **What's New in v1.0.4?**
 >
 > -   Fixed missing CSS issue during npm install
->     → [See full changelog](CHANGELOG.md)
+>     → [See full changelog](changelog.md)
 
 ## Demo
 
