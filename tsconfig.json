@@ -7,6 +7,7 @@
         "declaration": true,
         "declarationDir": "dist/types",
         // "preserveExtensions": true,
+        "emitDeclarationOnly": true,
         "esModuleInterop": true,
         "strict": true,
         "skipLibCheck": true
