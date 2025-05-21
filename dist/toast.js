@@ -1,5 +1,6 @@
-import { toastIconMap } from "./toastIconMap.js";
-export class Toast {
+import { toastIconMap } from './toastIconMap.js';
+
+class Toast {
     constructor(message, type, options = {}) {
         this.message = message;
         this.type = type;
@@ -167,3 +168,5 @@ export class Toast {
         }
     }
 }
+
+export { Toast };

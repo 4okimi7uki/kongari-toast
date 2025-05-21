@@ -11,6 +11,11 @@
 **Kongari-Toast** - Lightly crisp, no extra toppings. Just clean toast notifications. Auto-fade with progress, and type-based icons and color themes.
 Built for Vanilla JS — and yes, it works perfectly with npm too.
 
+> 📌 **What's New in v1.0.4?**
+>
+> -   Fixed missing CSS issue during npm install
+>     → [See full changelog](CHANGELOG.md)
+
 ## Demo
 
 --- TBD ---
