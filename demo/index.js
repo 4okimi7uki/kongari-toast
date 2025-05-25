@@ -1,4 +1,4 @@
-import { Toast } from "../dist/toast.js";
+import { Toast } from "./toast.js";
 
 const handleCoding = () => {
     const demoCode = `new Toast('Toast is ready!', "${
