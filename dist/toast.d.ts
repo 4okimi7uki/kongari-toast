@@ -3,6 +3,7 @@ type ToastType = "default" | "success" | "error" | "warning" | "info" | "promise
 interface ToastOptions {
     duration?: number;
     position?: string;
+    mode?: "light" | "dark" | "auto";
     withoutMsg?: boolean;
 }
 declare class Toast {

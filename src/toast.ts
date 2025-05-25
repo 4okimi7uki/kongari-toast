@@ -3,6 +3,7 @@ import { toastIconMap, ToastType, ToastIcon } from "./toastIconMap.js";
 export interface ToastOptions {
     duration?: number;
     position?: string;
+    mode?: "light" | "dark" | "auto";
     withoutMsg?: boolean;
 }
 
@@ -93,6 +94,22 @@ export class Toast {
 
         this.applyTypeStyle();
 
+        const { mode } = this.options;
+        if (mode) {
+            switch (mode) {
+                case "auto":
+                    break;
+                case "dark":
+                    toast.classList.add("dark");
+                    progress.classList.add("dark");
+                    break;
+                case "light":
+                    toast.classList.add("light");
+                    progress.classList.add("light");
+                    break;
+            }
+        }
+
         withoutMsg ? contents.append(icon) : contents.append(icon, msg);
         inner.append(contents);
         progress.append(bar);
@@ -167,7 +184,7 @@ export class Toast {
         options: ToastOptions = {}
     ) {
         if (!Toast.isPromise(promise)) {
-            new Toast("Warning: this function requires a Promise as input", "warning");
+            new Toast("Warning: this function requires a Promise as input", "warning", options);
             return promise;
         }
 

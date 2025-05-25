@@ -7,13 +7,16 @@ import { defineConfig } from "eslint/config";
 
 export default defineConfig([
     {
+        ignores: ["dist/**"],
+    },
+    {
         files: ["**/*.{js,mjs,cjs}"],
         languageOptions: {
             ecmaVersion: "latest",
             sourceType: "module",
             globals: globals.browser,
         },
-        ...js.configs.recommended, // ← これが正しいフラット形式の読み方！
+        ...js.configs.recommended,
         rules: {
             semi: ["error", "always"],
         },
