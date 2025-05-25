@@ -1,0 +1,224 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+@font-face {
+    font-family: "Nautilus";
+    src: url("./fonts/Nautilus.otf");
+}
+
+body {
+    height: 100svh;
+    font-family: "Noto Sans JP", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+
+    background: #c6e1ce;
+}
+
+.container {
+    padding: 5px max(2%, 16px);
+}
+
+header {
+    background: #fff;
+    box-shadow: 0px 2px 4px #00000029;
+
+    & > .container {
+        /* height: 50px; */
+        display: flex;
+        align-items: center;
+    }
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+}
+
+.logo {
+    padding: 10px 0 5px;
+    font-family: "Nautilus";
+    font-size: 32px;
+}
+/* ------ main ------ */
+main {
+    position: relative;
+}
+/* ------ code ------ */
+.code-area {
+    min-height: 175px;
+    margin: 40px auto;
+    display: flex;
+    justify-content: center;
+}
+
+.kongari-window {
+    width: 80%;
+    border: solid 2px #6e8374;
+    /* height: fit-content; */
+    border-radius: 10px;
+    background: hsl(40, 100%, 99%);
+    box-shadow: inset 0 0 35px #bf8654ea;
+    padding: 16px;
+    border-radius: 14px;
+    color: #3b1e0a;
+    font-family: "Fira Code", monospace;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.4);
+}
+
+code {
+    transition: all 0.7s;
+}
+
+/* ------ knob ------ */
+.knob-area {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.knob-area > .container {
+    display: flex;
+    flex-direction: column;
+}
+
+.container.options {
+    width: 60%;
+}
+
+.option-btn-wrapper {
+    display: flex;
+    height: fit-content;
+    gap: 20px;
+    margin: 10px 0;
+    flex-wrap: wrap;
+}
+
+button {
+    padding: 5px 15px;
+    font-size: 22px;
+    border-radius: 50px;
+    border: 2px solid #ccc;
+}
+
+label {
+    font-size: 18px;
+    background: #eee;
+    padding: 5px 15px;
+    border-radius: 50px;
+    border: 2px solid #ccc;
+    cursor: pointer;
+    transition: all 0.5s;
+    user-select: none;
+
+    &:hover {
+        background: #bbd4c1;
+        border: 2px solid #6e8374;
+    }
+}
+input[type="radio"]:checked + label {
+    background: rgb(27, 27, 27);
+    border: 2px solid rgb(0, 0, 0);
+    color: #fff;
+}
+
+#js-duration {
+    margin: 5px 10px 0 0;
+    font-size: 18px;
+    border: 2px solid #6e8374;
+    border-radius: 5px;
+    padding: 2px 10px;
+    outline: none;
+}
+
+.circle {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(var(--r) * 1.1px);
+    height: calc(var(--r) * 1.1px);
+    border: 20px solid transparent;
+    border-radius: 50%;
+    box-sizing: border-box;
+    > div {
+        --a2: calc(var(--a) * 1deg - 90deg);
+        --x: calc(cos(var(--a2)) * var(--r) * 0.8px);
+        --y: calc(sin(var(--a2)) * var(--r) * 0.8px);
+        position: absolute;
+        color: #747272;
+        font: 400 22px / 1 "Roboto Mono";
+        font-style: normal;
+        translate: var(--x) var(--y);
+    }
+}
+
+.container.make {
+    width: 30%;
+    padding-right: 4%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+#makeToast {
+    position: absolute;
+    cursor: pointer;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: #dbdbdb;
+    border: #737373 solid 1px;
+
+    &:hover > .bump {
+        transform: rotate(-18deg);
+        transition-duration: 0.4s;
+        transition-timing-function: ease-in;
+    }
+}
+.bump {
+    width: 100%;
+    height: 40px;
+    border-top: 2px solid #737373;
+    border-bottom: 2px solid #737373;
+    transform: rotate(-90deg);
+    transition-property: transform;
+    transition-duration: 2s;
+    transition-timing-function: ease-out;
+}
+
+@media screen and (width <= 910px) {
+    .container.options {
+        width: 100%;
+    }
+    .knob-area {
+        flex-direction: column;
+    }
+    .container.make {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #makeToast {
+        width: 120px;
+        height: 120px;
+    }
+
+    .circle {
+        > div {
+            --x: calc(cos(var(--a2)) * var(--r) * 0.5px);
+            --y: calc(sin(var(--a2)) * var(--r) * 0.5px);
+        }
+    }
+}
