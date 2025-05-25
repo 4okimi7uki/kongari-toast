@@ -1,11 +1,11 @@
-import { ToastType } from "./toastIconMap.js";
-import "./toast.css";
-export interface ToastOptions {
+type ToastType = "default" | "success" | "error" | "warning" | "info" | "promise";
+
+interface ToastOptions {
     duration?: number;
     position?: string;
     withoutMsg?: boolean;
 }
-export declare class Toast {
+declare class Toast {
     private message;
     private type;
     private options;
@@ -33,3 +33,5 @@ export declare class Toast {
     }, options?: ToastOptions): Promise<T>;
     update(newMessage: string, newType?: ToastType, duration?: number): void;
 }
+
+export { Toast, type ToastOptions };

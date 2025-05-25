@@ -1,5 +1,4 @@
 import { toastIconMap, ToastType, ToastIcon } from "./toastIconMap.js";
-import "./toast.css";
 
 export interface ToastOptions {
     duration?: number;
