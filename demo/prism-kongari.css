@@ -1,0 +1,70 @@
+pre[class*="language-"] {
+    /* background: radial-gradient(circle, #fef3e2 0%, #fdd1aa 40%, #f4b17a 85%, #e89b66 100%); */
+    padding: 1.5rem;
+    border-radius: 12px;
+    color: #3b1e0a;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.3);
+    overflow-x: auto;
+    font-size: 1rem;
+    font-family: "Fira Code", monospace;
+    background: transparent;
+    backdrop-filter: blur(2px);
+    outline: none;
+}
+
+code {
+    font-family: "Fira Code", monospace;
+    font-size: 1rem;
+    color: #3b1e0a;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.3);
+    font-size: 18px;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+    color: #7d4f2f; /* 焦げ茶寄りのソフトグレー */
+}
+
+.token.punctuation {
+    color: #3b1e0a; /* 焦げ目色 */
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol {
+    color: #dd6a27; /* あたたかみのある焼きオレンジ */
+}
+
+.token.selector,
+.token.attr-name {
+    color: #cb6702; /* より濃い焼き色 */
+}
+
+.token.string {
+    color: #47a570; /* 焼き網にのせた葉っぱ感🌿 */
+}
+
+.token.function {
+    color: #4a89dc; /* 焼き加減チェックボタン的クールさ */
+}
+
+.token.keyword {
+    color: #7c3aed; /* deep violet */
+}
+.token.string {
+    color: #02876f; /* 深いティールグリーン */
+}
+.token.function {
+    color: #4338ca; /* 濃紺系ブルー */
+}
+.token.punctuation,
+.token.operator {
+    color: #3b1e0a; /* 焦げ茶 */
+}
+.token.comment {
+    color: #6b4e3d;
+    font-style: italic;
+}
