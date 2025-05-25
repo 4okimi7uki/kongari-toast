@@ -4,7 +4,6 @@ export interface ToastOptions {
     duration?: number;
     position?: string;
     mode?: "light" | "dark" | "auto";
-    withoutMsg?: boolean;
 }
 
 export class Toast {
@@ -79,8 +78,6 @@ export class Toast {
     }
 
     private createStructure() {
-        const { withoutMsg } = this.options;
-
         const toast = this.createElement("div", "toast");
         const inner = this.createElement("div", "toast-inner");
         const contents = this.createElement("div", "toast-inner-contents");
@@ -110,7 +107,7 @@ export class Toast {
             }
         }
 
-        withoutMsg ? contents.append(icon) : contents.append(icon, msg);
+        contents.append(icon, msg);
         inner.append(contents);
         progress.append(bar);
         this.toast.append(inner, progress);
