@@ -15,7 +15,7 @@ export class Toast {
     }>;
     private position!: ReturnType<typeof Toast.getPosition>;
 
-    constructor(private message: string, private type: ToastType, private options: ToastOptions = {}) {
+    constructor(private message: string, private type: ToastType = "default", private options: ToastOptions = {}) {
         this.position = Toast.getPosition(this.options.position ?? null);
         this.removeToast = this.removeToast.bind(this);
         this.createToast();
@@ -107,7 +107,7 @@ export class Toast {
             }
         }
 
-        contents.append(icon, msg);
+        this.type === "default" ? contents.append(msg) : contents.append(icon, msg);
         inner.append(contents);
         progress.append(bar);
         this.toast.append(inner, progress);
