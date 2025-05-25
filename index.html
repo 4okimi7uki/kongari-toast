@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Kongari-Toast</title>
+        <meta name="theme-color" content="#06c1db" />
+        <link rel="stylesheet" href="./style.css" />
+
+        <link rel="stylesheet" href="./prism-kongari.css" />
+        <script src="https://unpkg.com/prismjs/prism.js"></script>
+        <script src="https://unpkg.com/prismjs/components/prism-javascript.min.js"></script>
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <div class="title">
+                    <span class="logo">kongari-toast</span>
+                    <span>demo page</span>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="code-area">
+                <div class="kongari-window">
+                    <pre
+                        class="language-js"
+                    ><code class="lang-js" id="js-insert">new Toast("Toast is ready!", "default");</code></pre>
+                </div>
+            </div>
+            <div class="knob-area">
+                <div class="container options">
+                    <h1>Options</h1>
+                    <!-- Position -->
+                    <div class="container">
+                        <h2>Position</h2>
+                        <div class="option-btn-wrapper">
+                            <div class="btn-wrapper">
+                                <input type="radio" name="position" id="top-left" hidden />
+                                <label for="top-left">top-left</label>
+                            </div>
+                            <div class="btn-wrapper">
+                                <input type="radio" name="position" id="top-right" hidden />
+                                <label for="top-right">top-right</label>
+                            </div>
+                            <div class="btn-wrapper">
+                                <input type="radio" name="position" id="bottom-left" hidden />
+                                <label for="bottom-left">bottom-left</label>
+                            </div>
+                            <div class="btn-wrapper">
+                                <input type="radio" name="position" id="bottom-right" hidden />
+                                <label for="bottom-right">bottom-right</label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- duration -->
+                    <div class="container">
+                        <h2>Duration</h2>
+                        <div><input type="number" id="js-duration" value="3000" /><span>ms</span></div>
+                    </div>
+                    <!-- mode -->
+                    <div class="container">
+                        <h2>Mode</h2>
+                        <div class="option-btn-wrapper">
+                            <div class="btn-wrapper">
+                                <input type="radio" name="mode" id="dark" hidden />
+                                <label for="dark">dark</label>
+                            </div>
+                            <div class="btn-wrapper">
+                                <input type="radio" name="mode" id="light" hidden />
+                                <label for="light">light</label>
+                            </div>
+                            <div class="btn-wrapper">
+                                <input type="radio" name="mode" id="auto" hidden />
+                                <label for="auto">auto(default)</label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- type -->
+                    <div class="container">
+                        <h2>Type</h2>
+                        <div class="option-btn-wrapper">
+                            <div class="btn-wrapper">
+                                <input type="radio" name="type" id="default" hidden />
+                                <label for="default">default</label>
+                            </div>
+                            <div class="btn-wrapper">
+                                <input type="radio" name="type" id="success" hidden />
+                                <label for="success">success</label>
+                            </div>
+                            <div class="btn-wrapper">
+                                <input type="radio" name="type" id="error" hidden />
+                                <label for="error">error</label>
+                            </div>
+                            <div class="btn-wrapper">
+                                <input type="radio" name="type" id="info" hidden />
+                                <label for="info">info</label>
+                            </div>
+                            <div class="btn-wrapper">
+                                <input type="radio" name="type" id="warning" hidden />
+                                <label for="warning">warning</label>
+                            </div>
+                            <div class="btn-wrapper">
+                                <input type="radio" name="type" id="promise" hidden />
+                                <label for="promise">promise</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container make">
+                    <div class="circle" style="--r: 150">
+                        <button type="button" id="makeToast"><div class="bump"></div></button>
+                        <div style="--a: 0">0</div>
+                        <div style="--a: 18">1</div>
+                        <div style="--a: 36">2</div>
+                        <div style="--a: 54">3</div>
+                        <div style="--a: 72">4</div>
+                        <div style="--a: 90">5</div>
+                        <div style="--a: 108">・</div>
+                        <div style="--a: 126">・</div>
+                        <div style="--a: 144">・</div>
+                        <div style="--a: 162">・</div>
+                        <div style="--a: 180">10</div>
+                        <div style="--a: 198">・</div>
+                        <div style="--a: 216">・</div>
+                        <div style="--a: 234">・</div>
+                        <div style="--a: 252">・</div>
+                        <div style="--a: 270">15</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <script type="module" src="./index.js"></script>
+    </body>
+</html>

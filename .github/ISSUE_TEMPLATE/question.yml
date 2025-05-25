@@ -1,0 +1,13 @@
+name: Question
+description: Ask a question or get help
+title: "[Question] "
+labels: [question]
+body:
+    - type: textarea
+      id: question
+      attributes:
+          label: What’s your question?
+          description: Ask freely! We'll do our best to help.
+          placeholder: How do I use Toast.promise with dynamic content?
+      validations:
+          required: true
