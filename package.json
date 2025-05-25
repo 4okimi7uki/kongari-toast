@@ -1,8 +1,11 @@
 {
-    "name": "kongari-toast",
-    "version": "1.0.4",
+    "name": "@4okimi7uki/kongari-toast",
+    "version": "1.0.5-beta.0",
     "description": "Sleek and minimal toast notifications.Auto-dismiss with a progress bar. Customizable icons and colors by type. Works out of the box with Vanilla JS.",
     "homepage": "https://github.com/4okimi7uki/kongari-toast#readme",
+    "publishConfig": {
+        "registry": "https://npm.pkg.github.com/"
+    },
     "bugs": {
         "url": "https://github.com/4okimi7uki/kongari-toast/issues"
     },
@@ -15,7 +18,7 @@
     "type": "module",
     "main": "./dist/toast.js",
     "style": "./dist/toast.css",
-    "types": "./dist/types/toast.d.ts",
+    "types": "./dist/toast.d.ts",
     "exports": {
         ".": {
             "import": "./dist/toast.js",
@@ -35,21 +38,19 @@
         "progress-bar"
     ],
     "scripts": {
-        "build": "rollup -c && tsc",
+        "build": "tsup",
         "lint": "eslint . --ext .ts",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "devDependencies": {
         "@eslint/js": "^9.26.0",
-        "@rollup/plugin-typescript": "^12.1.2",
         "eslint": "^9.26.0",
         "globals": "^16.1.0",
-        "rollup": "^4.41.0",
-        "rollup-plugin-css-only": "^4.5.2",
         "typescript": "^5.8.3",
         "typescript-eslint": "^8.32.0"
     },
     "dependencies": {
-        "tslib": "^2.8.1"
+        "tslib": "^2.8.1",
+        "tsup": "^8.5.0"
     }
 }
