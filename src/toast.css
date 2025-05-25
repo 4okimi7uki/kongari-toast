@@ -15,7 +15,7 @@
     height: 100px;
     border-radius: 5px;
     box-shadow: 0px 2px 4px #00000029;
-    background: #fff;
+    background: transparent;
     overflow: hidden;
     transition: all 0.8s;
 }
@@ -159,4 +159,36 @@
     to {
         width: 0;
     }
+}
+
+@media (prefers-color-scheme: light) {
+    .toast {
+        background: #fff;
+        color: #333;
+    }
+}
+@media (prefers-color-scheme: dark) {
+    .toast {
+        background: #1e1e1e !important;
+        color: #fff;
+    }
+    .toast-progressbar {
+        border-top: 1px solid #4f4f4f;
+    }
+}
+
+.dark.toast {
+    background: #1e1e1e !important;
+    color: #fff !important;
+}
+.dark.toast-progressbar {
+    border-top: 1px solid #4f4f4f !important;
+}
+
+.light.toast {
+    background: #fff !important;
+    color: #333 !important;
+}
+.light.toast-progressbar {
+    border-top: 1px solid #eee !important;
 }
