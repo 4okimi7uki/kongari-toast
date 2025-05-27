@@ -202,7 +202,7 @@ input[type="radio"]:checked + label {
         width: 100%;
     }
     .knob-area {
-        flex-direction: column;
+        flex-direction: column-reverse;
     }
     .container.make {
         width: 100%;
