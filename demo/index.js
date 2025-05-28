@@ -71,6 +71,23 @@ const handleMakeToast = () => {
     }
 };
 
+const handleCopy = () => {
+    const target = document.querySelector("#js-insert").textContent;
+    const copyTxt = document.querySelector("#js-copy-txt");
+    navigator.clipboard.writeText(target).then(
+        () => {
+            new Toast(`Copied code!`, "success");
+            copyTxt.textContent = "copied";
+            setTimeout(() => {
+                copyTxt.textContent = "copy";
+            }, 3700);
+        },
+        (err) => {
+            new Toast(err, "error", { duration: 6000 });
+        }
+    );
+};
+
 document.addEventListener("DOMContentLoaded", () => {
     const codeArea = document.querySelector("#js-insert");
     document.addEventListener("change", (e) => {
@@ -86,5 +103,9 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelector("#makeToast").addEventListener("click", () => {
         handleMakeToast();
         console.log("click");
+    });
+
+    document.querySelector(".copy-icon").addEventListener("click", () => {
+        handleCopy();
     });
 });
