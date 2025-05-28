@@ -5,6 +5,7 @@
     gap: 12px;
     z-index: 9999;
     transition: all 0.8s;
+    pointer-events: none;
 }
 
 .toast {
@@ -23,6 +24,7 @@
 .position-tr {
     top: 20px;
     right: 20px;
+    align-items: flex-end;
 }
 .position-tl {
     top: 20px;
@@ -31,6 +33,7 @@
 .position-br {
     bottom: 20px;
     right: 20px;
+    align-items: flex-end;
 }
 .position-bl {
     bottom: 20px;
