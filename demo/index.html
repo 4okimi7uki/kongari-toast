@@ -6,6 +6,7 @@
         <title>Kongari-Toast</title>
         <meta name="theme-color" content="#06c1db" />
         <link rel="stylesheet" href="./style.css" />
+        <link rel="shortcut icon" href="./img/kongari-icon.png" type="image/x-icon" />
 
         <link rel="stylesheet" href="./prism-kongari.css" />
         <script src="https://unpkg.com/prismjs/prism.js"></script>
@@ -24,6 +25,16 @@
         <main>
             <div class="code-area">
                 <div class="kongari-window">
+                    <div class="copy-icon">
+                        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M9 9V3C9 2.44772 9.44772 2 10 2H33C33.5523 2 34 2.44772 34 3V26C34 26.5523 33.5523 27 33 27H27M2 10V33C2 33.5523 2.44772 34 3 34H26C26.5523 34 27 33.5523 27 33V10C27 9.44772 26.5523 9 26 9H3C2.44772 9 2 9.44772 2 10Z"
+                                stroke="currentColor"
+                                stroke-width="3"
+                            />
+                        </svg>
+                        <span id="js-copy-txt">copy</span>
+                    </div>
                     <pre
                         class="language-js"
                     ><code class="lang-js" id="js-insert">new Toast("Toast is ready!", "default");</code></pre>
@@ -110,7 +121,7 @@
                 </div>
                 <div class="container make">
                     <div class="circle" style="--r: 150">
-                        <button type="button" id="makeToast"><div class="bump"></div></button>
+                        <button type="button" id="makeToast"><div class="bump">Make Toast!</div></button>
                         <div style="--a: 0">0</div>
                         <div style="--a: 18">1</div>
                         <div style="--a: 36">2</div>
