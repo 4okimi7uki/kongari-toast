@@ -4,6 +4,21 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Kongari-Toast</title>
+        <meta
+            name="description"
+            content="Kongari-Toast is lightly crisp — no extra toppings, just a clean toast notification library for Vanilla JS. Easy to use via CDN or npm."
+        />
+
+        <!-- OGP -->
+        <meta property="og:title" content="Kongari-Toast - Lightly crisp, no extra toppings" />
+        <meta
+            property="og:description"
+            content="A lightweight, dependency-free toast notification library for Vanilla JS. Clean design, crisp experience."
+        />
+        <meta property="og:image" content="./img/kongari-icon.png" />
+        <meta property="og:url" content="https://4okimi7uki.github.io/kongari-toast/" />
+        <meta property="og:type" content="website" />
+
         <meta name="theme-color" content="#06c1db" />
         <link rel="stylesheet" href="./style.css" />
         <link rel="shortcut icon" href="./img/kongari-icon.png" type="image/x-icon" />
@@ -60,7 +75,7 @@
                                 <label for="bottom-left">bottom-left</label>
                             </div>
                             <div class="btn-wrapper">
-                                <input type="radio" name="position" id="bottom-right" hidden />
+                                <input type="radio" name="position" id="bottom-right" checked hidden />
                                 <label for="bottom-right">bottom-right</label>
                             </div>
                         </div>
@@ -83,7 +98,7 @@
                                 <label for="light">light</label>
                             </div>
                             <div class="btn-wrapper">
-                                <input type="radio" name="mode" id="auto" hidden />
+                                <input type="radio" name="mode" id="auto" checked hidden />
                                 <label for="auto">auto(default)</label>
                             </div>
                         </div>
@@ -93,7 +108,7 @@
                         <h2>Type</h2>
                         <div class="option-btn-wrapper">
                             <div class="btn-wrapper">
-                                <input type="radio" name="type" id="default" hidden />
+                                <input type="radio" name="type" id="default" checked hidden />
                                 <label for="default">default</label>
                             </div>
                             <div class="btn-wrapper">
