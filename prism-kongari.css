@@ -1,6 +1,6 @@
 pre[class*="language-"] {
     /* background: radial-gradient(circle, #fef3e2 0%, #fdd1aa 40%, #f4b17a 85%, #e89b66 100%); */
-    padding: 1.5rem;
+    padding: 1rem;
     border-radius: 12px;
     color: #3b1e0a;
     text-shadow: 0 1px 1px rgba(255, 255, 255, 0.3);
