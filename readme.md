@@ -151,4 +151,4 @@ You can use emojis, SVGs, or even image paths — it's totally up to you.
 
 ---
 
-> 2025 Aoki Mizuki – Developed with 🍭 and a sense of fun.
+<small>2025 Aoki Mizuki – Developed with 🍭 and a sense of fun.</small>
