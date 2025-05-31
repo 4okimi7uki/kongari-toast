@@ -1,3 +1,22 @@
+# Changelog
+
+## [2.0.0] - 2025-05-31
+
+### Feature
+
+-   Dark mode support for toast notifications
+-   Improved developer experience: GitHub Actions, issue templates
+-   Demo: First public **demo page** with usage examples
+
+### Changed
+
+-   Switched bundler from Rollup to `tsup`, enabling inline CSS injection
+
+### Fixed
+
+-   Toast container now positions correctly in all layouts
+-   Removed empty icon space when no icon is specified
+
 ## [1.0.4] - 2025-05-21
 
 ### Fixed

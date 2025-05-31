@@ -1,10 +1,10 @@
 {
-    "name": "kongari-toast",
-    "version": "2.0.0",
+    "name": "@4okimi7uki/kongari-toast",
+    "version": "2.0.0-beta.1",
     "description": "Sleek and minimal toast notifications.Auto-dismiss with a progress bar. Customizable icons and colors by type. Works out of the box with Vanilla JS.",
     "homepage": "https://4okimi7uki.github.io/kongari-toast/",
     "publishConfig": {
-        "registry": "https://registry.npmjs.org/"
+        "registry": "https://npm.pkg.github.com/"
     },
     "bugs": {
         "url": "https://github.com/4okimi7uki/kongari-toast/issues"
@@ -17,6 +17,7 @@
     "author": "Mizuki Aoki",
     "type": "module",
     "main": "./dist/toast.js",
+    "style": "./dist/toast.css",
     "types": "./dist/toast.d.ts",
     "exports": {
         ".": {
@@ -24,18 +25,8 @@
             "types": "./dist/types/toast.d.ts"
         }
     },
-    "files": [
-        "dist"
-    ],
-    "keywords": [
-        "toast",
-        "notification",
-        "vanilla-js",
-        "ui-component",
-        "typescript",
-        "minimal",
-        "progress-bar"
-    ],
+    "files": ["dist"],
+    "keywords": ["toast", "notification", "vanilla-js", "ui-component", "typescript", "minimal", "progress-bar"],
     "scripts": {
         "build": "tsup",
         "lint": "eslint . --ext .ts",
