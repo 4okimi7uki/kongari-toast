@@ -1,6 +1,6 @@
 {
     "name": "@4okimi7uki/kongari-toast",
-    "version": "2.0.0-beta.0",
+    "version": "2.0.0-beta.1",
     "description": "Sleek and minimal toast notifications.Auto-dismiss with a progress bar. Customizable icons and colors by type. Works out of the box with Vanilla JS.",
     "homepage": "https://github.com/4okimi7uki/kongari-toast#readme",
     "publishConfig": {
