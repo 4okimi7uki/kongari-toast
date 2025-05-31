@@ -3,7 +3,7 @@
 </p>
 
 ![MIT License](https://img.shields.io/badge/license-MIT-green.svg)
-![Made with TypeScript](https://img.shields.io/badge/TypeScript-checked-blue.svg)
+[![Made with TypeScript](https://img.shields.io/badge/TypeScript-checked-blue.svg)](https://www.typescriptlang.org/)
 [![npm version](https://img.shields.io/npm/v/kongari-toast.svg)](https://www.npmjs.com/package/kongari-toast)
 
 # Kongari-Toast 🍞
@@ -11,14 +11,17 @@
 **Kongari-Toast** - Lightly crisp, no extra toppings. Just clean toast notifications. Auto-fade with progress, and type-based icons and color themes.
 Built for Vanilla JS — and yes, it works perfectly with npm too.
 
-> 📌 **What's New in v1.0.4?**
+> 📌 **What's New in v2.0.0?**
 >
-> -   Fixed missing CSS issue during npm install
->     → [See full changelog](changelog.md)
+> -   **Dark Mode Support** – Sleek toast styling that adapts to dark backgrounds
+> -   [**New Demo Page**](https://4okimi7uki.github.io/kongari-toast/) – Try out toast examples live
+> -   **Bundler Migration** – Replaced Rollup with `tsup` for faster builds and inline CSS
+>
+> 🔍 See [CHANGELOG.md](https://github.com/4okimi7uki/kongari-toast/blob/main/changelog.md) for full details
 
 ## Demo
 
---- TBD ---
+[CHECK HERE!!](https://4okimi7uki.github.io/kongari-toast/)
 
 ## Installation
 
@@ -37,10 +40,10 @@ new Toast("save!", "success");
 
 ### via CDN
 
-```html
-<!-- style -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/kongari-toast/dist/toast.css" />
+> 💡 Since `v2.0.0`, there's **no need to load a separate CSS file**.  
+> Styles are bundled automatically via inline CSS injection.
 
+```html
 <!-- ESM Module -->
 <script type="module">
     import { Toast } from "https://cdn.jsdelivr.net/npm/kongari-toast/dist/toast.js";
@@ -59,11 +62,11 @@ After installing Kongari-Toast via CDN or npm, you can use it like this:
 new Toast(message, type, options?)
 ```
 
-| Parameter | Type     | Description                                                    |
-| --------- | -------- | -------------------------------------------------------------- |
-| `message` | `string` | The text content shown in the toast                            |
-| `type`    | `string` | Toast type: `"success"`, `"error"`, `"info"`, `"warning"`      |
-| `options` | `object` | (_Optional_) Additional settings (e.g. `duration`, `position`) |
+| Parameter | Type     | Description                                                         |
+| --------- | -------- | ------------------------------------------------------------------- |
+| `message` | `string` | The text content shown in the toast                                 |
+| `type`    | `string` | Toast type: `"success"`, `"error"`, `"info"`, `"warning"`           |
+| `options` | `object` | (_Optional_) Additional settings (e.g. `duration`, `position` etc.) |
 
 ### Example
 
@@ -75,10 +78,11 @@ new Toast("Just so you know...", "info", { duration: 5000 });
 
 ### Options
 
-| Option     | Type     | Default          | Description                                                                            |
-| ---------- | -------- | ---------------- | -------------------------------------------------------------------------------------- |
-| `duration` | `number` | `3000`ms         | How long (ms) the toast stays visible                                                  |
-| `position` | `string` | `"bottom-right"` | Position on the screen: `"top-right"`, `"top-left"`, `"bottom-right"`, `"bottom-left"` |
+| Option     | Type     | Default          | Description                                                                                       |
+| ---------- | -------- | ---------------- | ------------------------------------------------------------------------------------------------- |
+| `duration` | `number` | `3000`ms         | How long (ms) the toast stays visible                                                             |
+| `position` | `string` | `"bottom-right"` | Position on the screen: `"top-right"`, `"top-left"`, `"bottom-right"`, `"bottom-left"`            |
+| `mode`     | `string` | `auto`           | 　 The default value is `auto`, which automatically follows the system theme (`light` or `dark`). |
 
 > The `options` object is likely to expand in future updates.  
 > Got a feature you'd like to see?　[Open an issue](https://github.com/4okimi7uki/kongari-toast/issues) — suggestions are always welcome!
@@ -91,6 +95,7 @@ new Toast("Just so you know...", "info", { duration: 5000 });
 new Toast("Hello, Kongari-Toast!", "info", {
     duration: 4000,
     position: "bottom-left",
+    mode: "dark",
 });
 ```
 
@@ -115,11 +120,11 @@ Toast.promise(
 Toast.promise(promise, messages, options?)
 ```
 
-| Parameter  | Type      | Description                                                    |
-| ---------- | --------- | -------------------------------------------------------------- |
-| `promise`  | `Promise` | The asynchronous task to track                                 |
-| `messages` | `object`  | Texts for `"loading"`, `"success"`, and `"error"`              |
-| `options`  | `object`  | (_Optional_) Additional settings (e.g. `duration`, `position`) |
+| Parameter  | Type      | Description                                                         |
+| ---------- | --------- | ------------------------------------------------------------------- |
+| `promise`  | `Promise` | The asynchronous task to track                                      |
+| `messages` | `object`  | Texts for `"loading"`, `"success"`, and `"error"`                   |
+| `options`  | `object`  | (_Optional_) Additional settings (e.g. `duration`, `position` etc.) |
 
 ### Example
 
